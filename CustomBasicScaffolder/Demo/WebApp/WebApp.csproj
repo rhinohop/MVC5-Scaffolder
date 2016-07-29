@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,6 +92,8 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -140,6 +143,10 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Wcf, Version=3.5.1404.0, Culture=neutral, PublicKeyToken=2ec651f14ef84543, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity3.Wcf.3.5.1404.0\lib\net45\Unity.Wcf.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebActivatorEx">
       <HintPath>..\..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
@@ -592,6 +599,12 @@
     <Compile Include="Services\Works\IWorkService.cs" />
     <Compile Include="Services\Works\WorkService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="UnitySample\UnityInstanceProvider.cs" />
+    <Compile Include="WcfServiceFactory.cs" />
+    <Compile Include="WCF\BASE_CIQCODE.svc.cs">
+      <DependentUpon>BASE_CIQCODE.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WCF\IBASE_CIQCODE.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\jsTree\docs.css" />
@@ -1712,6 +1725,7 @@
     <Content Include="img\p_big3.jpg" />
     <Content Include="img\rails_logo.png" />
     <Content Include="img\zender_logo.png" />
+    <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\demo\chartjs-demo.js" />
@@ -2181,6 +2195,7 @@
     <Content Include="Views\Shared\EditorTemplates\Int.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="WCF\BASE_CIQCODE.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

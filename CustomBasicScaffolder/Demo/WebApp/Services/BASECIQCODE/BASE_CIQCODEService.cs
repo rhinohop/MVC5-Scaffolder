@@ -90,6 +90,11 @@ namespace WebApp.Services
             return ExcelHelper.ExportExcel(typeof(BASE_CIQCODE), datarows);
 
         }
+
+        public IEnumerable<BASE_CIQCODE> Get()
+        {
+            return this._repository.Queryable();
+        }
     }
 }
 

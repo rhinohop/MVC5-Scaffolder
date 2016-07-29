@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebApp.WCF.BASE_CIQCODE" CodeBehind="BASE_CIQCODE.svc.cs"   %>

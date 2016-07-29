@@ -15,15 +15,19 @@ using WebApp.Models;
 using WebApp.Repositories;
 using System.Data;
 using System.IO;
+using System.ServiceModel;
 
 namespace WebApp.Services
 {
+
+    [ServiceContract]
     public interface IBASE_CIQCODEService:IService<BASE_CIQCODE>
     {
 
-         
-         
- 
+        [OperationContract]
+        IEnumerable<BASE_CIQCODE> Get();
+
+        [OperationContract]
 		void ImportDataTable(DataTable datatable);
 		Stream ExportExcel( string filterRules = "",string sort = "ID", string order = "asc");
 	}
