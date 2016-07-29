@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
@@ -10,6 +11,8 @@ namespace WebApp.Controllers
     {
         public ActionResult Index()
         {
+            OdpContext db = new OdpContext();
+            var list=  db.BASE_CIQCODE.ToList();
             return View();
         }
 

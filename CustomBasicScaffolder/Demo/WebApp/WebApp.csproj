@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EPPlus, Version=4.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
       <Private>True</Private>
@@ -61,6 +69,14 @@
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
       <HintPath>..\..\packages\Unity.3.5.1405-prerelease\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.12.1.2400\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.2400\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PagedList">
       <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -73,6 +89,8 @@
     <Reference Include="System.Linq.Dynamic">
       <HintPath>..\..\packages\System.Linq.Dynamic.1.0.4\lib\net40\System.Linq.Dynamic.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -147,12 +165,6 @@
     </Reference>
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -278,24 +290,149 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
+    <Compile Include="Models\AUTO_CHECKRESULT.cs" />
+    <Compile Include="Models\AUTO_RECORDINFO.cs" />
+    <Compile Include="Models\AUTO_TABCONFIG.cs" />
+    <Compile Include="Models\AUTO_TEMPLATE.cs" />
     <Compile Include="Models\BaseCode.cs" />
     <Compile Include="Models\BaseCodeMetadata.cs" />
+    <Compile Include="Models\BASE_ALTERRECORD.cs" />
+    <Compile Include="Models\BASE_ASSISTKIND.cs" />
+    <Compile Include="Models\BASE_CIQCODE.cs" />
+    <Compile Include="Models\BASE_COMMODITYHS.cs" />
+    <Compile Include="Models\BASE_COMPANY.cs" />
+    <Compile Include="Models\BASE_CONSIGNEETYPE.cs" />
+    <Compile Include="Models\BASE_CONTAINERSIZE.cs" />
+    <Compile Include="Models\BASE_CONTAINERSTANDARD.cs" />
+    <Compile Include="Models\BASE_CONTAINERTYPE.cs" />
+    <Compile Include="Models\BASE_COUNTRY.cs" />
+    <Compile Include="Models\BASE_CUSTOMDISTRICT.cs" />
+    <Compile Include="Models\BASE_DECLCURRENCY.cs" />
+    <Compile Include="Models\BASE_DECLFEE.cs" />
+    <Compile Include="Models\BASE_DECLHSCHAPTER.cs" />
+    <Compile Include="Models\BASE_DECLHSTYPE.cs" />
+    <Compile Include="Models\BASE_DECLPRODUCTUNIT.cs" />
+    <Compile Include="Models\BASE_DECLSTATUS.cs" />
+    <Compile Include="Models\BASE_DECLTRADEWAY.cs" />
+    <Compile Include="Models\BASE_DECLUSE.cs" />
+    <Compile Include="Models\BASE_EXCHANGEWAY.cs" />
+    <Compile Include="Models\BASE_HARBOUR.cs" />
+    <Compile Include="Models\BASE_INSPCOMPANYNATURE.cs" />
+    <Compile Include="Models\BASE_INSPCONVEYANCE.cs" />
+    <Compile Include="Models\BASE_INSPECTFLAG.cs" />
+    <Compile Include="Models\BASE_INSPECTIONAGENCY.cs" />
+    <Compile Include="Models\BASE_INSPHS.cs" />
+    <Compile Include="Models\BASE_INSPINVOICE.cs" />
+    <Compile Include="Models\BASE_INSPLICENSE.cs" />
+    <Compile Include="Models\BASE_INSPUSE.cs" />
+    <Compile Include="Models\BASE_LISTTYPE.cs" />
+    <Compile Include="Models\BASE_MOTORCADE.cs" />
+    <Compile Include="Models\BASE_NEEDDOCUMENT.cs" />
+    <Compile Include="Models\BASE_ORDERSTATUS.cs" />
+    <Compile Include="Models\BASE_PORT.cs" />
+    <Compile Include="Models\BASE_REPORTREGION.cs" />
+    <Compile Include="Models\BASE_SPECIALHSCONVERT.cs" />
+    <Compile Include="Models\BASE_STATUSCONFIG.cs" />
+    <Compile Include="Models\BASE_TRADEWAY.cs" />
+    <Compile Include="Models\BASE_TRANSACTION.cs" />
+    <Compile Include="Models\BASE_WASTEGOODS.cs" />
+    <Compile Include="Models\BASE_WITHINREGION.cs" />
+    <Compile Include="Models\BASE_YEAR.cs" />
+    <Compile Include="Models\BGDZT.cs" />
+    <Compile Include="Models\BGJ_LOADDATA.cs" />
+    <Compile Include="Models\BGJ_SUBDATA.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryMetadata.cs" />
+    <Compile Include="Models\CHATMESSAGE.cs" />
+    <Compile Include="Models\CHATTOPIC.cs" />
+    <Compile Include="Models\CHATTOPICRECEIVER.cs" />
+    <Compile Include="Models\CODESMITH_EXTENDED_PROPERTIES.cs" />
     <Compile Include="Models\Company.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\CompanyMetadata.cs" />
+    <Compile Include="Models\CONFIG_ALTERRECORD.cs" />
+    <Compile Include="Models\CONFIG_CONSUMING.cs" />
+    <Compile Include="Models\CONFIG_NOTICE.cs" />
+    <Compile Include="Models\CONFIG_PAGECONFIG.cs" />
+    <Compile Include="Models\CONFIG_PAGECONFIGDETAIL.cs" />
+    <Compile Include="Models\CONFIG_PGCUSTOMSMAPPING.cs" />
+    <Compile Include="Models\CONFIG_PGFROMMAPPING.cs" />
+    <Compile Include="Models\CONFIG_PGTABLEMAPPING.cs" />
+    <Compile Include="Models\CONFIG_PREORDER.cs" />
+    <Compile Include="Models\CONFIG_PROXYER.cs" />
+    <Compile Include="Models\CONFIG_SETPARAMETER.cs" />
+    <Compile Include="Models\CONFIG_SPECIALRULES.cs" />
+    <Compile Include="Models\CONFIG_WARNING.cs" />
+    <Compile Include="Models\CONTAINER.cs" />
     <Compile Include="Models\DataTableImport.cs" />
+    <Compile Include="Models\DEP.cs" />
     <Compile Include="Models\Department.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\DepartmentMetadata.cs" />
+    <Compile Include="Models\DOCINFO.cs" />
+    <Compile Include="Models\EMPLOYEE.cs" />
+    <Compile Include="Models\FINANCE_APPROVALRECORD.cs" />
+    <Compile Include="Models\FINANCE_BUDGETTYPE.cs" />
+    <Compile Include="Models\FINANCE_COST.cs" />
+    <Compile Include="Models\FINANCE_EXPENDITURE.cs" />
+    <Compile Include="Models\FINANCE_EXPENSEPAYABLE.cs" />
+    <Compile Include="Models\FIN_ACCOUNTSRECEIVABLE.cs" />
+    <Compile Include="Models\FIN_CONFIGURE.cs" />
+    <Compile Include="Models\FIN_COSTSETTLEMENTRULE_D.cs" />
+    <Compile Include="Models\FIN_COSTSETTLEMENTRULE_H.cs" />
+    <Compile Include="Models\FIN_COSTUNIT.cs" />
+    <Compile Include="Models\FIN_RECEIVABLERULESCUS_D.cs" />
+    <Compile Include="Models\FIN_RECEIVABLERULESCUS_H.cs" />
+    <Compile Include="Models\FIN_RECEIVABLERULES_D.cs" />
+    <Compile Include="Models\FIN_RECEIVABLERULES_H.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LIST_ATTACHMENT.cs" />
+    <Compile Include="Models\LIST_ATTACHMENTDETAIL.cs" />
+    <Compile Include="Models\LIST_CHECKORDERMARK.cs" />
+    <Compile Include="Models\LIST_CSPOND.cs" />
+    <Compile Include="Models\LIST_DECLARATION.cs" />
+    <Compile Include="Models\LIST_DECLARATION_AFTER.cs" />
+    <Compile Include="Models\LIST_ELEBACK.cs" />
+    <Compile Include="Models\LIST_FILECONFIG.cs" />
+    <Compile Include="Models\LIST_INSPECTION.cs" />
+    <Compile Include="Models\LIST_INSPECTION_AFTER.cs" />
+    <Compile Include="Models\LIST_INSPRECEIPTSTATUS.cs" />
+    <Compile Include="Models\LIST_INVENTORYHISTORY.cs" />
+    <Compile Include="Models\LIST_ISBACK.cs" />
+    <Compile Include="Models\LIST_LICENSE.cs" />
+    <Compile Include="Models\LIST_ORDER.cs" />
+    <Compile Include="Models\LIST_ORDERATTACHMENT.cs" />
+    <Compile Include="Models\LIST_ORDERRECORDER.cs" />
+    <Compile Include="Models\LIST_PAUSE.cs" />
+    <Compile Include="Models\LIST_PAUSEOK.cs" />
+    <Compile Include="Models\LIST_PREDECLACCDOC.cs" />
+    <Compile Include="Models\LIST_PREDECLACCDOC_AFTER.cs" />
+    <Compile Include="Models\LIST_PREDECLARATION.cs" />
+    <Compile Include="Models\LIST_PREDECLCONTAINER.cs" />
+    <Compile Include="Models\LIST_PREDECLCONTAINER_AFTER.cs" />
+    <Compile Include="Models\LIST_PREDECLLIST.cs" />
+    <Compile Include="Models\LIST_PREDECLLIST_AFTER.cs" />
+    <Compile Include="Models\LIST_PREINSPCONTAINER.cs" />
+    <Compile Include="Models\LIST_PREINSPECTION.cs" />
+    <Compile Include="Models\LIST_PREINSPLIST.cs" />
+    <Compile Include="Models\LIST_PREINSPLIST_AFTER.cs" />
+    <Compile Include="Models\LIST_PRETCCGMAPPING.cs" />
+    <Compile Include="Models\LIST_PRETCCONTAINER.cs" />
+    <Compile Include="Models\LIST_PRETRANCUSTOMS.cs" />
+    <Compile Include="Models\LIST_PRETRANCUSTOMS_AFTER.cs" />
+    <Compile Include="Models\LIST_RECEIPTSTATUS.cs" />
+    <Compile Include="Models\LIST_RESENDHISTORY.cs" />
+    <Compile Include="Models\LIST_SUBSCRIBE.cs" />
+    <Compile Include="Models\LIST_TIMES.cs" />
+    <Compile Include="Models\LIST_UPDATEHISTORY.cs" />
+    <Compile Include="Models\LOADDATA.cs" />
     <Compile Include="Models\ManagementViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\MenuItemMetadata.cs" />
+    <Compile Include="Models\OdpContext.cs" />
     <Compile Include="Models\Order.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -306,18 +443,103 @@
     <Compile Include="Models\OrderMetadata.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\PDFSHRINKLOG.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductMetadata.cs" />
+    <Compile Include="Models\RELA_COMPANYNATURE.cs" />
+    <Compile Include="Models\RELA_CONTAINER.cs" />
+    <Compile Include="Models\RELA_COUNTRY.cs" />
+    <Compile Include="Models\RELA_CURRENCY.cs" />
+    <Compile Include="Models\RELA_PACKAGE.cs" />
+    <Compile Include="Models\RELA_PORT.cs" />
+    <Compile Include="Models\RELA_PRODUCTUNIT.cs" />
+    <Compile Include="Models\RELA_TRADE.cs" />
+    <Compile Include="Models\RELA_TRANSPORT.cs" />
+    <Compile Include="Models\RELA_WITHINREGION.cs" />
     <Compile Include="Models\RoleMenu.cs" />
     <Compile Include="Models\RoleMenuMetadata.cs" />
     <Compile Include="Models\RoleMenuViewModel.cs" />
+    <Compile Include="Models\SC_SUBDATA.cs" />
     <Compile Include="Models\StoreContext.cs" />
+    <Compile Include="Models\SUBDATA.cs" />
+    <Compile Include="Models\SYSAPPLICATION.cs" />
+    <Compile Include="Models\SYSAUTH.cs" />
+    <Compile Include="Models\SYSAUTHTYPE.cs" />
+    <Compile Include="Models\SYSENUMERATION.cs" />
+    <Compile Include="Models\SYSEVENTCONFIG.cs" />
+    <Compile Include="Models\SYSEVENTLOG.cs" />
+    <Compile Include="Models\SYSEVENTTYPE.cs" />
+    <Compile Include="Models\SYSGROUP.cs" />
+    <Compile Include="Models\SYSGROUPPERMISSION.cs" />
+    <Compile Include="Models\SYSGROUPROLE.cs" />
+    <Compile Include="Models\SYSMODULE.cs" />
+    <Compile Include="Models\SYSMODULETYPE.cs" />
+    <Compile Include="Models\SYSMSGSENDED.cs" />
+    <Compile Include="Models\SYSMSGTOSEND.cs" />
+    <Compile Include="Models\SYSROLE.cs" />
+    <Compile Include="Models\SYSROLEPERMISSION.cs" />
+    <Compile Include="Models\SYSROLETYPE.cs" />
+    <Compile Include="Models\SYSSYSTEM.cs" />
+    <Compile Include="Models\SYSTASK.cs" />
+    <Compile Include="Models\SYSTEMSET.cs" />
+    <Compile Include="Models\SYSUSERGROUP.cs" />
+    <Compile Include="Models\SYSUSERPERMISSION.cs" />
+    <Compile Include="Models\SYSUSERROLE.cs" />
+    <Compile Include="Models\SYS_BUSIKIND.cs" />
+    <Compile Include="Models\SYS_BUSITYPE.cs" />
+    <Compile Include="Models\SYS_CODE.cs" />
+    <Compile Include="Models\SYS_COMPANY.cs" />
+    <Compile Include="Models\SYS_CUSTOMER.cs" />
+    <Compile Include="Models\SYS_DECLARATIONCAR.cs" />
+    <Compile Include="Models\SYS_DECLWAY.cs" />
+    <Compile Include="Models\SYS_DEPARTMENT.cs" />
+    <Compile Include="Models\SYS_ENTRUSTTYPE.cs" />
+    <Compile Include="Models\SYS_FILETYPE.cs" />
+    <Compile Include="Models\SYS_FTPSETTINGS.cs" />
+    <Compile Include="Models\SYS_GOODSTYPE.cs" />
+    <Compile Include="Models\SYS_INSPLIBRARY.cs" />
+    <Compile Include="Models\SYS_INSPTYPE.cs" />
+    <Compile Include="Models\SYS_MACADDRESS.cs" />
+    <Compile Include="Models\SYS_NOTICETYPE.cs" />
+    <Compile Include="Models\SYS_POSITION.cs" />
+    <Compile Include="Models\SYS_PROCEDUREMAPPING.cs" />
+    <Compile Include="Models\SYS_RECORDINFO.cs" />
+    <Compile Include="Models\SYS_RECORDINFO_DETAIL.cs" />
+    <Compile Include="Models\SYS_REGUAREATYPE.cs" />
+    <Compile Include="Models\SYS_REPORTLIBRARY.cs" />
+    <Compile Include="Models\SYS_REPWAY.cs" />
+    <Compile Include="Models\SYS_STATUS.cs" />
+    <Compile Include="Models\SYS_TRMAPPING.cs" />
+    <Compile Include="Models\SYS_UNITCONVERT.cs" />
+    <Compile Include="Models\SYS_USER.cs" />
+    <Compile Include="Models\SYS_WOODPACKING.cs" />
     <Compile Include="Models\Task.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\TASK_28BACKFILL.cs" />
+    <Compile Include="Models\TASK_DECLWRITE.cs" />
+    <Compile Include="Models\TASK_INSPHISTORY.cs" />
+    <Compile Include="Models\TASK_INSPWRITE.cs" />
+    <Compile Include="Models\TASK_INSPWRITEMAPPING.cs" />
+    <Compile Include="Models\TASK_ZC.cs" />
+    <Compile Include="Models\TASK_ZGD.cs" />
+    <Compile Include="Models\TASK_ZT.cs" />
+    <Compile Include="Models\T_CPINFO.cs" />
+    <Compile Include="Models\T_DZ.cs" />
+    <Compile Include="Models\T_JZX.cs" />
+    <Compile Include="Models\T_MENU.cs" />
+    <Compile Include="Models\T_ROLE.cs" />
+    <Compile Include="Models\T_ROLEMENU.cs" />
+    <Compile Include="Models\T_USERROLE.cs" />
+    <Compile Include="Models\T_ZGFY.cs" />
+    <Compile Include="Models\USER_RENAME_COMPANY.cs" />
+    <Compile Include="Models\USER_USE_DECLARATIONCAR.cs" />
+    <Compile Include="Models\WEB_BANNER.cs" />
+    <Compile Include="Models\WEB_NOTICE.cs" />
     <Compile Include="Models\WorkMetadata.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\YWTOTAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseCodes\BaseCodeQuery.cs" />
     <Compile Include="Repositories\BaseCodes\BaseCodeRepository.cs" />
