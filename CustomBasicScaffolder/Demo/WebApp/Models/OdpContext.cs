@@ -4,8 +4,9 @@ namespace WebApp.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Repository.Pattern.Ef6;
 
-    public partial class OdpContext : DbContext
+    public partial class OdpContext : DataContext
     {
         public OdpContext()
             : base("name=OdpContext")

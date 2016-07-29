@@ -64,7 +64,7 @@ namespace WebApp.App_Start
             container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => HttpContext.Current.GetOwinContext().Authentication));
             //container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => HttpContext.Current.GetOwinContext().Authentication));
             container.RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager());
-            container.RegisterType<IDataContextAsync, StoreContext>(new PerRequestLifetimeManager());
+            container.RegisterType<IDataContextAsync, OdpContext>(new PerRequestLifetimeManager());
 
 
             container.RegisterType<IRepositoryAsync<DataTableImportMapping>, Repository<DataTableImportMapping>>();
@@ -109,6 +109,12 @@ namespace WebApp.App_Start
 
             container.RegisterType<IRepositoryAsync<DataTableImportMapping>, Repository<DataTableImportMapping>>();
             container.RegisterType<IDataTableImportMappingService, DataTableImportMappingService>();
+
+
+
+
+            container.RegisterType<IRepositoryAsync<BASE_CIQCODE>, Repository<BASE_CIQCODE>>();
+            container.RegisterType<IBASE_CIQCODEService, BASE_CIQCODEService>();
         }
     }
 }

@@ -220,6 +220,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountManageController.cs" />
     <Compile Include="Controllers\BaseCodesController.cs" />
+    <Compile Include="Controllers\BASE_CIQCODEsController.cs" />
     <Compile Include="Controllers\ButtonAttribute.cs" />
     <Compile Include="Controllers\Categories1Controller.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -299,6 +300,7 @@
     <Compile Include="Models\BASE_ALTERRECORD.cs" />
     <Compile Include="Models\BASE_ASSISTKIND.cs" />
     <Compile Include="Models\BASE_CIQCODE.cs" />
+    <Compile Include="Models\BASE_CIQCODEMetadata.cs" />
     <Compile Include="Models\BASE_COMMODITYHS.cs" />
     <Compile Include="Models\BASE_COMPANY.cs" />
     <Compile Include="Models\BASE_CONSIGNEETYPE.cs" />
@@ -541,6 +543,8 @@
     </Compile>
     <Compile Include="Models\YWTOTAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BASECIQCODE\BASE_CIQCODEQuery.cs" />
+    <Compile Include="Repositories\BASECIQCODE\BASE_CIQCODERepository.cs" />
     <Compile Include="Repositories\BaseCodes\BaseCodeQuery.cs" />
     <Compile Include="Repositories\BaseCodes\BaseCodeRepository.cs" />
     <Compile Include="Repositories\Categories\CategoryQuery.cs" />
@@ -563,6 +567,8 @@
     <Compile Include="Repositories\RoleMenus\RoleMenuRepository.cs" />
     <Compile Include="Repositories\Works\WorkQuery.cs" />
     <Compile Include="Repositories\Works\WorkRepository.cs" />
+    <Compile Include="Services\BASECIQCODE\BASE_CIQCODEService.cs" />
+    <Compile Include="Services\BASECIQCODE\IBASE_CIQCODEService.cs" />
     <Compile Include="Services\BaseCodes\BaseCodeService.cs" />
     <Compile Include="Services\BaseCodes\IBaseCodeService.cs" />
     <Compile Include="Services\Categories\CategoryService.cs" />
@@ -2347,6 +2353,11 @@
     <Content Include="Views\MenuItems\EditForm.cshtml" />
     <Content Include="Views\MenuItems\_PopupSearch.cshtml" />
     <Content Include="Views\MenuItems\_MenuItemEditForm.cshtml" />
+    <Content Include="Views\BASE_CIQCODEs\Index.cshtml" />
+    <Content Include="Views\BASE_CIQCODEs\Create.cshtml" />
+    <Content Include="Views\BASE_CIQCODEs\Edit.cshtml" />
+    <Content Include="Views\BASE_CIQCODEs\EditForm.cshtml" />
+    <Content Include="Views\BASE_CIQCODEs\_PopupSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">

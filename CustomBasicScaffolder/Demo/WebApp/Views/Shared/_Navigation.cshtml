@@ -27,11 +27,11 @@
                     IN+
                 </div>
             </li>
-            <li class="@Html.IsSelected(controller: "Companies,Departments,Employees")">
+            <li class="@Html.IsSelected(controller: "BASE_CIQCODEs,Departments,Employees")">
                 <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">组织架构</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Companies", cssClass: "in")">
                   
-                    <li class="@Html.IsSelected(action: "Index", controller: "Companies")"><a href="@Url.Action("Index", "Companies")">公司信息</a></li>
+                    <li class="@Html.IsSelected(action: "Index", controller: "BASE_CIQCODEs")"><a href="@Url.Action("Index", "BASE_CIQCODEs")">BASE_CIQCODE</a></li>
                     <li class="@Html.IsSelected(action: "Index", controller: "Departments")"><a href="@Url.Action("Index", "Departments")">部门信息</a></li> 
                     <li class="@Html.IsSelected(action: "Index", controller: "Employees")"><a href="@Url.Action("Index", "Employees")">员工信息</a></li> 
                   

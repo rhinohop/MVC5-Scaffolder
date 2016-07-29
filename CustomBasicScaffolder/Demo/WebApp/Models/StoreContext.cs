@@ -36,5 +36,7 @@ namespace WebApp.Models
         public DbSet<RoleMenu> RoleMenus { get; set; }
 
         public DbSet<DataTableImportMapping> DataTableImportMappings { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.BASE_CIQCODE> BASE_CIQCODE { get; set; }
     }
 }
