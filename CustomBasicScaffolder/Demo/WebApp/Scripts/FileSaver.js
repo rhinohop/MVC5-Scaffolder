@@ -217,4 +217,171 @@ jQuery.extend({
         //formData.append('order', 'asc');
         xhr.send(formData);
     }
-})
+});
+jQuery.extend({
+    postJSONDownload: function (url, formData, onCompleted) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.responseType = 'blob';
+        //xhr.timeout = 0;
+        //设置发送数据的请求格式
+        xhr.setRequestHeader('content-type', 'application/json');
+        xhr.overrideMimeType("application/vnd.ms-excel");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                //console.log(xhr.getResponseHeader('Content-Disposition'));
+                var header = xhr.getResponseHeader('Content-Disposition');
+                var fileName = '';
+                if (header) {
+                    var regx = /filename[^;=\n]*=((['\"]).*?\2|[^;\n]*)/g;
+                    fileName = regx.exec(header)[1];
+                    //console.log(regx.exec(header));
+                }
+                var blob = xhr.response;
+                saveAs(blob, fileName);
+                onCompleted(fileName);
+            }
+        };
+        xhr.onload = function (e) {
+            //console.log(e);
+        };
+        xhr.onerror = function (e) {
+            console.log('postJSONDownload',e);
+        };
+        //var formData = new FormData();
+        //formData.append('filterRules', filterRules);
+        //formData.append('sort', 'Id');
+        //formData.append('order', 'asc');
+        try {
+            var Jsondata = JSON.stringify(formData);
+            //console.log('postJSONDownload', Jsondata);
+            xhr.send(Jsondata);
+        } catch (ex) {
+            console.log('postJSONDownload',ex);
+        }
+    }
+});
+
+//+function ($) {
+
+//    // BUTTON PUBLIC CLASS DEFINITION
+//    // ==============================
+
+//    var postDownloadFile = function (element, options) {
+//        this.$element = $(element)
+//        this.options = $.extend({}, Button.DEFAULTS, options)
+//        this.isLoading = false
+//    }
+
+//    postDownloadFile.VERSION = '1.0.0'
+
+//    Button.DEFAULTS = {
+//        loadingText: 'loading...'
+//    }
+//    postDownloadFile.prototype.Start
+
+//    postDownloadFile.prototype.Start = function (state) {
+//    }
+//}(jQuery);
+
+
+//downloadFile(FileUrl, function (xhr) {
+//    var Descrption = xhr.getResponseHeader('Content-Disposition');
+//    var FileName = '';
+//    if (Descrption != null && Descrption != "undefind" && Descrption != "") {
+//        var _filenameStartindex = Descrption.lastIndexOf('=');
+//        if (_filenameStartindex >= 0)
+//            FileName = Descrption.substr(_filenameStartindex + 1);
+//    }
+//    else
+//        FileName = '未知.data';
+//    var blob = xhr.response;
+//    //debugger;//js 调试状态
+//    saveAs(blob, FileName);
+//    setTimeout(function () {
+//        $("#DownLoadDrdDtlProgrsformModal").modal('toggle');
+//    }, 3000);
+//});
+
+//function downloadFile(url, success) {
+//    var xhr = new XMLHttpRequest();
+//    xhr.open('GET', url, true);
+//    xhr.responseType = "blob";
+//    xhr.onreadystatechange = function () {
+//        if (xhr.readyState == 4) {
+//            $("#div_time").html("下载耗时：" + (+new Date - startTime) / 1000 + "s");
+//            $("#div_time").show();
+//            if (success)
+//                success(xhr);
+//        }
+//    };
+
+//    ////下载进度条界面 取消时的操作 停止下载
+//    //$("button[id=DownLoadDrdDtlProgrsClose],button[id=DownLoadDrdDtlProgrsCancel],button[id=DownLoadDrdDtlProgrsOK]","#DownLoadDrdDtlProgrsformModal").on("click", function () {
+//    //    try
+//    //    {
+//    //        if (xhr.readyState == 4) {
+//    //            $("#DownLoadDrdDtlProgrsformModal").modal('toggle');
+//    //        }
+//    //    }
+//    //    catch(e)
+//    //    {
+//    //        $("#DownLoadDrdDtlProgrsformModal").modal('toggle');
+//    //    }
+//    //});
+
+//    var lastLoaded = 0, speed = 0, lastTime = +new Date, startTime = lastTime;
+//    var speedText = $("#div_speed");
+//    var loadedInfo = $("#div_progressinfo");
+//    ////文件读取开始时触发。
+//    //xhr.addEventListener("Onloadstart",function(e){
+//    //},false);
+//    //进行中时定时触发
+//    xhr.addEventListener("progress", function (e) {
+//        var currTime = +new Date;
+//        var currLoaded = e.loaded;
+//        var dT = currTime - lastTime;
+//        var dL = currLoaded - lastLoaded;
+
+//        lastTime = currTime;
+//        lastLoaded = currLoaded;
+
+//        speed = parseInt(dL / dT);
+//        speedText.html("下载速度 " + speed + " kb/s");
+
+//        var percent = (currLoaded / e.total);
+//        loadedInfo.html("文件大小： " + (e.total / 1024 / 1024).toFixed(2) + "M，已下载：" + (currLoaded / 1024 / 1024).toFixed(2) + "M  <br />进度：" + (percent * 100).toFixed(2) + "%");
+
+//        $("#div_UploadSuccess", '#div_progressbar').css({ width: (percent * 100).toFixed(2).toString() + '%' });
+//        $("#div_UploadDanger", '#div_progressbar').css({ width: (100 - (percent * 100)).toFixed(2).toString() + '%' });
+//    });
+//    //被中止时触发
+//    xhr.addEventListener("abort", function (e) {
+//        alert('下载被终止');
+//        $("#div_time").html("");
+//        $("#div_time").hide();
+//        $("#div_speed").html("");
+//        $("#div_progressinfo").html("");
+//        $("#div_UploadSuccess", '#div_progressbar').css({ width: '0%' });
+//        $("#div_UploadDanger", '#div_progressbar').css({ width: '100%' });
+//        $("#DownLoadDrdDtlProgrsformModal").modal('toggle');
+//    }, false);
+//    //出错时触发
+//    xhr.addEventListener("error", function (e) {
+//        alert('下载时发生错误');
+//        $("#div_time").html("");
+//        $("#div_time").hide();
+//        $("#div_speed").html("");
+//        $("#div_progressinfo").html("");
+//        $("#div_UploadSuccess", '#div_progressbar').css({ width: '0%' });
+//        $("#div_UploadDanger", '#div_progressbar').css({ width: '100%' });
+//        $("#DownLoadDrdDtlProgrsformModal").modal('toggle');
+//    }, false);
+//    //成功完成时触发
+//    xhr.addEventListener("load", function (e) {
+//    }, false);
+//    //完成时，无论成功或者失败都会触发
+//    xhr.addEventListener("loadend", function (e) {
+//    }, false);
+//    xhr.send(null);
+//}

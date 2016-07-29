@@ -2192,6 +2192,13 @@
     <Content Include="Scripts\plugins\validate\jquery.validate.min.js" />
     <Content Include="Scripts\plugins\video\responsible-video.js" />
     <Content Include="Scripts\plugins\wow\wow.min.js" />
+    <Content Include="Scripts\uploadifive\change-log.txt" />
+    <Content Include="Scripts\uploadifive\Instructions.txt" />
+    <Content Include="Scripts\uploadifive\jquery.uploadifive.js" />
+    <Content Include="Scripts\uploadifive\jquery.uploadifive.min.js" />
+    <Content Include="Scripts\uploadifive\license-standard.txt" />
+    <Content Include="Scripts\uploadifive\uploadifive-cancel.png" />
+    <Content Include="Scripts\uploadifive\uploadifive.css" />
     <Content Include="Views\Shared\EditorTemplates\Int.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -2373,6 +2380,10 @@
     <Content Include="Views\BASE_CIQCODEs\Edit.cshtml" />
     <Content Include="Views\BASE_CIQCODEs\EditForm.cshtml" />
     <Content Include="Views\BASE_CIQCODEs\_PopupSearch.cshtml" />
+    <Content Include="Scripts\uploadifive\check-exists.php" />
+    <Content Include="Scripts\uploadifive\index.php" />
+    <Content Include="Scripts\uploadifive\uploadifive-image-only.php" />
+    <Content Include="Scripts\uploadifive\uploadifive.php" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">

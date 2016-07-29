@@ -16,7 +16,7 @@ namespace WebApp
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 
-            RouteTable.Routes.Add(new ServiceRoute("SVC/My", new WcfServiceFactory(), typeof(WebApp.Services.BASE_CIQCODEService)));
+            
             //routes.IgnoreRoute("{file}.html");
             routes.MapMvcAttributeRoutes();
             routes.MapRoute(
@@ -25,6 +25,8 @@ namespace WebApp
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
+
+            RouteTable.Routes.Add(new ServiceRoute("SVC/My", new WcfServiceFactory(), typeof(WebApp.Services.BASE_CIQCODEService)));
 
 
 
