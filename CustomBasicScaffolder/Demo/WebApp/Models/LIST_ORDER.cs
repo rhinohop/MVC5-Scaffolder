@@ -9,7 +9,7 @@ namespace WebApp.Models
     [Table("CUSDOC.LIST_ORDER")]
     public partial class LIST_ORDER
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LIST_ORDER()
         {
             CHATTOPICs = new HashSet<CHATTOPIC>();
@@ -395,10 +395,10 @@ namespace WebApp.Models
 
         public decimal? CHECKEDGOODSNUM { get; set; }
 
-        [Column(TypeName = "float")]
+       // [Column(TypeName = "float")]
         public decimal? CHECKEDWEIGHT { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+       // [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHATTOPIC> CHATTOPICs { get; set; }
     }
 }

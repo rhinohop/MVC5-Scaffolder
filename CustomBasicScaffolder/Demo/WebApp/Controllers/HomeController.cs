@@ -11,8 +11,8 @@ namespace WebApp.Controllers
     {
         public ActionResult Index()
         {
-            OdpContext db = new OdpContext();
-            var list=  db.BASE_CIQCODE.ToList();
+            //OdpContext db = new OdpContext();
+            //var list=  db.BASE_CIQCODE.ToList();
             return View();
         }
 

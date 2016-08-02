@@ -40,5 +40,9 @@ namespace WebApp.Models
         public System.Data.Entity.DbSet<WebApp.Models.BASE_CIQCODE> BASE_CIQCODE { get; set; }
 
         public System.Data.Entity.DbSet<WebApp.Models.BASE_COMPANY> BASE_COMPANY { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.AUTO_CHECKRESULT> AUTO_CHECKRESULT { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.LIST_ORDER> LIST_ORDER { get; set; }
     }
 }
