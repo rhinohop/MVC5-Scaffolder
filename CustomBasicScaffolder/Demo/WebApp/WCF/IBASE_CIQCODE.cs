@@ -13,6 +13,8 @@ namespace WebApp.WCF
     {
         [OperationContract]
         void DoWork();
+        [OperationContract]
+        IEnumerable<WebApp.Models.BASE_CIQCODE> GetData();
     }
 
     

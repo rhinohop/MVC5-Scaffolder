@@ -115,6 +115,11 @@ namespace WebApp.App_Start
 
             container.RegisterType<IRepositoryAsync<BASE_CIQCODE>, Repository<BASE_CIQCODE>>();
             container.RegisterType<IBASE_CIQCODEService, BASE_CIQCODEService>();
+
+
+            container.RegisterType<IRepositoryAsync<BASE_COMPANY>, Repository<BASE_COMPANY>>();
+            container.RegisterType<IBASE_COMPANYService, BASE_COMPANYService>();
+        
         }
     }
 }

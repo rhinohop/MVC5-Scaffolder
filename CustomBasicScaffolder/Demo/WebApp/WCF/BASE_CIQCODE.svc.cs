@@ -32,5 +32,11 @@ namespace WebApp.WCF
             _bASE_CIQCODEService.Update(item);
             _unitOfWork.SaveChanges();
         }
+
+
+        public IEnumerable<Models.BASE_CIQCODE> GetData()
+        {
+             return    _bASE_CIQCODEService.Queryable();
+        }
     }
 }

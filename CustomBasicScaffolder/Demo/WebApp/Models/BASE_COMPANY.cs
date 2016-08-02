@@ -1,5 +1,6 @@
 namespace WebApp.Models
 {
+    using Repository.Pattern.Ef6;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -7,7 +8,7 @@ namespace WebApp.Models
     using System.Data.Entity.Spatial;
 
     [Table("CUSDOC.BASE_COMPANY")]
-    public partial class BASE_COMPANY
+    public partial class BASE_COMPANY:Entity
     {
         public decimal ID { get; set; }
 
