@@ -43,7 +43,10 @@
     <script src="~/Scripts/uploadifive/jquery.uploadifive.js"></script>
     <script src="~/Scripts/FileSaver.js"></script>
     <script>
-
+        $.ajaxSetup({
+            contentType: 'application/json;charset=utf-8',
+            dataType: 'json',
+        });
         function dateformatter(value, row, index) {
 
             if (value == typeof (undefined))

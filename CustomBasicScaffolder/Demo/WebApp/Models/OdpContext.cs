@@ -25,96 +25,96 @@ namespace WebApp.Models
         }
         #region dbset
         public virtual DbSet<AUTO_CHECKRESULT> AUTO_CHECKRESULT { get; set; }
-       // public virtual DbSet<AUTO_RECORDINFO> AUTO_RECORDINFO { get; set; }
-       // public virtual DbSet<AUTO_TABCONFIG> AUTO_TABCONFIG { get; set; }
-       // public virtual DbSet<AUTO_TEMPLATE> AUTO_TEMPLATE { get; set; }
-       // public virtual DbSet<BASE_ALTERRECORD> BASE_ALTERRECORD { get; set; }
-       // public virtual DbSet<BASE_ASSISTKIND> BASE_ASSISTKIND { get; set; }
-       // public virtual DbSet<BASE_CIQCODE> BASE_CIQCODE { get; set; }
-       // public virtual DbSet<BASE_COMMODITYHS> BASE_COMMODITYHS { get; set; }
-       // public virtual DbSet<BASE_COMPANY> BASE_COMPANY { get; set; }
-       // public virtual DbSet<BASE_CONSIGNEETYPE> BASE_CONSIGNEETYPE { get; set; }
-       // public virtual DbSet<BASE_CONTAINERSIZE> BASE_CONTAINERSIZE { get; set; }
-       // public virtual DbSet<BASE_CONTAINERSTANDARD> BASE_CONTAINERSTANDARD { get; set; }
-       // public virtual DbSet<BASE_CONTAINERTYPE> BASE_CONTAINERTYPE { get; set; }
-       // public virtual DbSet<BASE_COUNTRY> BASE_COUNTRY { get; set; }
-       // public virtual DbSet<BASE_CUSTOMDISTRICT> BASE_CUSTOMDISTRICT { get; set; }
-       // public virtual DbSet<BASE_DECLCURRENCY> BASE_DECLCURRENCY { get; set; }
-       // public virtual DbSet<BASE_DECLFEE> BASE_DECLFEE { get; set; }
-       // public virtual DbSet<BASE_DECLHSCHAPTER> BASE_DECLHSCHAPTER { get; set; }
-       // public virtual DbSet<BASE_DECLHSTYPE> BASE_DECLHSTYPE { get; set; }
-       // public virtual DbSet<BASE_DECLPRODUCTUNIT> BASE_DECLPRODUCTUNIT { get; set; }
-       // public virtual DbSet<BASE_DECLSTATUS> BASE_DECLSTATUS { get; set; }
-       // public virtual DbSet<BASE_DECLTRADEWAY> BASE_DECLTRADEWAY { get; set; }
-       // public virtual DbSet<BASE_DECLUSE> BASE_DECLUSE { get; set; }
-       // public virtual DbSet<BASE_EXCHANGEWAY> BASE_EXCHANGEWAY { get; set; }
-       // public virtual DbSet<BASE_HARBOUR> BASE_HARBOUR { get; set; }
-       // public virtual DbSet<BASE_INSPCOMPANYNATURE> BASE_INSPCOMPANYNATURE { get; set; }
-       // public virtual DbSet<BASE_INSPCONVEYANCE> BASE_INSPCONVEYANCE { get; set; }
-       // public virtual DbSet<BASE_INSPECTFLAG> BASE_INSPECTFLAG { get; set; }
-       // public virtual DbSet<BASE_INSPECTIONAGENCY> BASE_INSPECTIONAGENCY { get; set; }
-       // public virtual DbSet<BASE_INSPHS> BASE_INSPHS { get; set; }
-       // public virtual DbSet<BASE_INSPINVOICE> BASE_INSPINVOICE { get; set; }
-       // public virtual DbSet<BASE_INSPLICENSE> BASE_INSPLICENSE { get; set; }
-       // public virtual DbSet<BASE_INSPUSE> BASE_INSPUSE { get; set; }
-       // public virtual DbSet<BASE_LISTTYPE> BASE_LISTTYPE { get; set; }
-       // public virtual DbSet<BASE_MOTORCADE> BASE_MOTORCADE { get; set; }
-       // public virtual DbSet<BASE_NEEDDOCUMENT> BASE_NEEDDOCUMENT { get; set; }
-       // public virtual DbSet<BASE_ORDERSTATUS> BASE_ORDERSTATUS { get; set; }
-       // public virtual DbSet<BASE_PORT> BASE_PORT { get; set; }
-       // public virtual DbSet<BASE_REPORTREGION> BASE_REPORTREGION { get; set; }
-       // public virtual DbSet<BASE_SPECIALHSCONVERT> BASE_SPECIALHSCONVERT { get; set; }
-       // public virtual DbSet<BASE_STATUSCONFIG> BASE_STATUSCONFIG { get; set; }
-       // public virtual DbSet<BASE_TRADEWAY> BASE_TRADEWAY { get; set; }
-       // public virtual DbSet<BASE_TRANSACTION> BASE_TRANSACTION { get; set; }
-       // public virtual DbSet<BASE_WASTEGOODS> BASE_WASTEGOODS { get; set; }
-       // public virtual DbSet<BASE_WITHINREGION> BASE_WITHINREGION { get; set; }
-       // public virtual DbSet<BASE_YEAR> BASE_YEAR { get; set; }
-       // public virtual DbSet<CHATMESSAGE> CHATMESSAGEs { get; set; }
-       // public virtual DbSet<CHATTOPIC> CHATTOPICs { get; set; }
-       // public virtual DbSet<CODESMITH_EXTENDED_PROPERTIES> CODESMITH_EXTENDED_PROPERTIES { get; set; }
-       // public virtual DbSet<CONFIG_ALTERRECORD> CONFIG_ALTERRECORD { get; set; }
-       // public virtual DbSet<CONFIG_CONSUMING> CONFIG_CONSUMING { get; set; }
-       // public virtual DbSet<CONFIG_NOTICE> CONFIG_NOTICE { get; set; }
-       // public virtual DbSet<CONFIG_PAGECONFIG> CONFIG_PAGECONFIG { get; set; }
-       // public virtual DbSet<CONFIG_PAGECONFIGDETAIL> CONFIG_PAGECONFIGDETAIL { get; set; }
-       // public virtual DbSet<CONFIG_PGCUSTOMSMAPPING> CONFIG_PGCUSTOMSMAPPING { get; set; }
-       // public virtual DbSet<CONFIG_PGFROMMAPPING> CONFIG_PGFROMMAPPING { get; set; }
-       // public virtual DbSet<CONFIG_PGTABLEMAPPING> CONFIG_PGTABLEMAPPING { get; set; }
-       // public virtual DbSet<CONFIG_PREORDER> CONFIG_PREORDER { get; set; }
-       // public virtual DbSet<CONFIG_PROXYER> CONFIG_PROXYER { get; set; }
-       // public virtual DbSet<CONFIG_SETPARAMETER> CONFIG_SETPARAMETER { get; set; }
-       // public virtual DbSet<CONFIG_SPECIALRULES> CONFIG_SPECIALRULES { get; set; }
-       // public virtual DbSet<CONFIG_WARNING> CONFIG_WARNING { get; set; }
-       // public virtual DbSet<CONTAINER> CONTAINERS { get; set; }
-       // public virtual DbSet<DEP> DEPs { get; set; }
-       // public virtual DbSet<DOCINFO> DOCINFOS { get; set; }
-       // public virtual DbSet<EMPLOYEE> EMPLOYEEs { get; set; }
-       // public virtual DbSet<FIN_ACCOUNTSRECEIVABLE> FIN_ACCOUNTSRECEIVABLE { get; set; }
-       // public virtual DbSet<FIN_COSTSETTLEMENTRULE_D> FIN_COSTSETTLEMENTRULE_D { get; set; }
-       // public virtual DbSet<FIN_COSTSETTLEMENTRULE_H> FIN_COSTSETTLEMENTRULE_H { get; set; }
-       // public virtual DbSet<FIN_COSTUNIT> FIN_COSTUNIT { get; set; }
-       // public virtual DbSet<FIN_RECEIVABLERULES_D> FIN_RECEIVABLERULES_D { get; set; }
-       // public virtual DbSet<FIN_RECEIVABLERULES_H> FIN_RECEIVABLERULES_H { get; set; }
-       // public virtual DbSet<FIN_RECEIVABLERULESCUS_D> FIN_RECEIVABLERULESCUS_D { get; set; }
-       // public virtual DbSet<FIN_RECEIVABLERULESCUS_H> FIN_RECEIVABLERULESCUS_H { get; set; }
-       // public virtual DbSet<FINANCE_APPROVALRECORD> FINANCE_APPROVALRECORD { get; set; }
-       // public virtual DbSet<FINANCE_BUDGETTYPE> FINANCE_BUDGETTYPE { get; set; }
-       // public virtual DbSet<FINANCE_COST> FINANCE_COST { get; set; }
-       // public virtual DbSet<FINANCE_EXPENDITURE> FINANCE_EXPENDITURE { get; set; }
-       // public virtual DbSet<FINANCE_EXPENSEPAYABLE> FINANCE_EXPENSEPAYABLE { get; set; }
-       // public virtual DbSet<LIST_ATTACHMENT> LIST_ATTACHMENT { get; set; }
-       // public virtual DbSet<LIST_ATTACHMENTDETAIL> LIST_ATTACHMENTDETAIL { get; set; }
-       // public virtual DbSet<LIST_CHECKORDERMARK> LIST_CHECKORDERMARK { get; set; }
-       // public virtual DbSet<LIST_CSPOND> LIST_CSPOND { get; set; }
-       // public virtual DbSet<LIST_DECLARATION> LIST_DECLARATION { get; set; }
-       // public virtual DbSet<LIST_DECLARATION_AFTER> LIST_DECLARATION_AFTER { get; set; }
-       // public virtual DbSet<LIST_ELEBACK> LIST_ELEBACK { get; set; }
-       // public virtual DbSet<LIST_FILECONFIG> LIST_FILECONFIG { get; set; }
-       // public virtual DbSet<LIST_INSPECTION> LIST_INSPECTION { get; set; }
-       // public virtual DbSet<LIST_INSPECTION_AFTER> LIST_INSPECTION_AFTER { get; set; }
-       // public virtual DbSet<LIST_INVENTORYHISTORY> LIST_INVENTORYHISTORY { get; set; }
-       // public virtual DbSet<LIST_ISBACK> LIST_ISBACK { get; set; }
+        public virtual DbSet<AUTO_RECORDINFO> AUTO_RECORDINFO { get; set; }
+        public virtual DbSet<AUTO_TABCONFIG> AUTO_TABCONFIG { get; set; }
+        public virtual DbSet<AUTO_TEMPLATE> AUTO_TEMPLATE { get; set; }
+        public virtual DbSet<BASE_ALTERRECORD> BASE_ALTERRECORD { get; set; }
+        public virtual DbSet<BASE_ASSISTKIND> BASE_ASSISTKIND { get; set; }
+        public virtual DbSet<BASE_CIQCODE> BASE_CIQCODE { get; set; }
+        public virtual DbSet<BASE_COMMODITYHS> BASE_COMMODITYHS { get; set; }
+        public virtual DbSet<BASE_COMPANY> BASE_COMPANY { get; set; }
+        public virtual DbSet<BASE_CONSIGNEETYPE> BASE_CONSIGNEETYPE { get; set; }
+        public virtual DbSet<BASE_CONTAINERSIZE> BASE_CONTAINERSIZE { get; set; }
+        public virtual DbSet<BASE_CONTAINERSTANDARD> BASE_CONTAINERSTANDARD { get; set; }
+        public virtual DbSet<BASE_CONTAINERTYPE> BASE_CONTAINERTYPE { get; set; }
+        public virtual DbSet<BASE_COUNTRY> BASE_COUNTRY { get; set; }
+        public virtual DbSet<BASE_CUSTOMDISTRICT> BASE_CUSTOMDISTRICT { get; set; }
+        public virtual DbSet<BASE_DECLCURRENCY> BASE_DECLCURRENCY { get; set; }
+        public virtual DbSet<BASE_DECLFEE> BASE_DECLFEE { get; set; }
+        public virtual DbSet<BASE_DECLHSCHAPTER> BASE_DECLHSCHAPTER { get; set; }
+        public virtual DbSet<BASE_DECLHSTYPE> BASE_DECLHSTYPE { get; set; }
+        public virtual DbSet<BASE_DECLPRODUCTUNIT> BASE_DECLPRODUCTUNIT { get; set; }
+        public virtual DbSet<BASE_DECLSTATUS> BASE_DECLSTATUS { get; set; }
+        public virtual DbSet<BASE_DECLTRADEWAY> BASE_DECLTRADEWAY { get; set; }
+        public virtual DbSet<BASE_DECLUSE> BASE_DECLUSE { get; set; }
+        public virtual DbSet<BASE_EXCHANGEWAY> BASE_EXCHANGEWAY { get; set; }
+        public virtual DbSet<BASE_HARBOUR> BASE_HARBOUR { get; set; }
+        public virtual DbSet<BASE_INSPCOMPANYNATURE> BASE_INSPCOMPANYNATURE { get; set; }
+        public virtual DbSet<BASE_INSPCONVEYANCE> BASE_INSPCONVEYANCE { get; set; }
+        public virtual DbSet<BASE_INSPECTFLAG> BASE_INSPECTFLAG { get; set; }
+        public virtual DbSet<BASE_INSPECTIONAGENCY> BASE_INSPECTIONAGENCY { get; set; }
+        public virtual DbSet<BASE_INSPHS> BASE_INSPHS { get; set; }
+        public virtual DbSet<BASE_INSPINVOICE> BASE_INSPINVOICE { get; set; }
+        public virtual DbSet<BASE_INSPLICENSE> BASE_INSPLICENSE { get; set; }
+        public virtual DbSet<BASE_INSPUSE> BASE_INSPUSE { get; set; }
+        public virtual DbSet<BASE_LISTTYPE> BASE_LISTTYPE { get; set; }
+        public virtual DbSet<BASE_MOTORCADE> BASE_MOTORCADE { get; set; }
+        public virtual DbSet<BASE_NEEDDOCUMENT> BASE_NEEDDOCUMENT { get; set; }
+        public virtual DbSet<BASE_ORDERSTATUS> BASE_ORDERSTATUS { get; set; }
+        public virtual DbSet<BASE_PORT> BASE_PORT { get; set; }
+        public virtual DbSet<BASE_REPORTREGION> BASE_REPORTREGION { get; set; }
+        public virtual DbSet<BASE_SPECIALHSCONVERT> BASE_SPECIALHSCONVERT { get; set; }
+        public virtual DbSet<BASE_STATUSCONFIG> BASE_STATUSCONFIG { get; set; }
+        public virtual DbSet<BASE_TRADEWAY> BASE_TRADEWAY { get; set; }
+        public virtual DbSet<BASE_TRANSACTION> BASE_TRANSACTION { get; set; }
+        public virtual DbSet<BASE_WASTEGOODS> BASE_WASTEGOODS { get; set; }
+        public virtual DbSet<BASE_WITHINREGION> BASE_WITHINREGION { get; set; }
+        public virtual DbSet<BASE_YEAR> BASE_YEAR { get; set; }
+        public virtual DbSet<CHATMESSAGE> CHATMESSAGEs { get; set; }
+        public virtual DbSet<CHATTOPIC> CHATTOPICs { get; set; }
+        public virtual DbSet<CODESMITH_EXTENDED_PROPERTIES> CODESMITH_EXTENDED_PROPERTIES { get; set; }
+        public virtual DbSet<CONFIG_ALTERRECORD> CONFIG_ALTERRECORD { get; set; }
+        public virtual DbSet<CONFIG_CONSUMING> CONFIG_CONSUMING { get; set; }
+        public virtual DbSet<CONFIG_NOTICE> CONFIG_NOTICE { get; set; }
+        public virtual DbSet<CONFIG_PAGECONFIG> CONFIG_PAGECONFIG { get; set; }
+        public virtual DbSet<CONFIG_PAGECONFIGDETAIL> CONFIG_PAGECONFIGDETAIL { get; set; }
+        public virtual DbSet<CONFIG_PGCUSTOMSMAPPING> CONFIG_PGCUSTOMSMAPPING { get; set; }
+        public virtual DbSet<CONFIG_PGFROMMAPPING> CONFIG_PGFROMMAPPING { get; set; }
+        public virtual DbSet<CONFIG_PGTABLEMAPPING> CONFIG_PGTABLEMAPPING { get; set; }
+        public virtual DbSet<CONFIG_PREORDER> CONFIG_PREORDER { get; set; }
+        public virtual DbSet<CONFIG_PROXYER> CONFIG_PROXYER { get; set; }
+        public virtual DbSet<CONFIG_SETPARAMETER> CONFIG_SETPARAMETER { get; set; }
+        public virtual DbSet<CONFIG_SPECIALRULES> CONFIG_SPECIALRULES { get; set; }
+        public virtual DbSet<CONFIG_WARNING> CONFIG_WARNING { get; set; }
+        public virtual DbSet<CONTAINER> CONTAINERS { get; set; }
+        public virtual DbSet<DEP> DEPs { get; set; }
+        public virtual DbSet<DOCINFO> DOCINFOS { get; set; }
+        public virtual DbSet<EMPLOYEE> EMPLOYEEs { get; set; }
+        public virtual DbSet<FIN_ACCOUNTSRECEIVABLE> FIN_ACCOUNTSRECEIVABLE { get; set; }
+        public virtual DbSet<FIN_COSTSETTLEMENTRULE_D> FIN_COSTSETTLEMENTRULE_D { get; set; }
+        public virtual DbSet<FIN_COSTSETTLEMENTRULE_H> FIN_COSTSETTLEMENTRULE_H { get; set; }
+        public virtual DbSet<FIN_COSTUNIT> FIN_COSTUNIT { get; set; }
+        public virtual DbSet<FIN_RECEIVABLERULES_D> FIN_RECEIVABLERULES_D { get; set; }
+        public virtual DbSet<FIN_RECEIVABLERULES_H> FIN_RECEIVABLERULES_H { get; set; }
+        public virtual DbSet<FIN_RECEIVABLERULESCUS_D> FIN_RECEIVABLERULESCUS_D { get; set; }
+        public virtual DbSet<FIN_RECEIVABLERULESCUS_H> FIN_RECEIVABLERULESCUS_H { get; set; }
+        public virtual DbSet<FINANCE_APPROVALRECORD> FINANCE_APPROVALRECORD { get; set; }
+        public virtual DbSet<FINANCE_BUDGETTYPE> FINANCE_BUDGETTYPE { get; set; }
+        public virtual DbSet<FINANCE_COST> FINANCE_COST { get; set; }
+        public virtual DbSet<FINANCE_EXPENDITURE> FINANCE_EXPENDITURE { get; set; }
+        public virtual DbSet<FINANCE_EXPENSEPAYABLE> FINANCE_EXPENSEPAYABLE { get; set; }
+        public virtual DbSet<LIST_ATTACHMENT> LIST_ATTACHMENT { get; set; }
+        public virtual DbSet<LIST_ATTACHMENTDETAIL> LIST_ATTACHMENTDETAIL { get; set; }
+        public virtual DbSet<LIST_CHECKORDERMARK> LIST_CHECKORDERMARK { get; set; }
+        public virtual DbSet<LIST_CSPOND> LIST_CSPOND { get; set; }
+        public virtual DbSet<LIST_DECLARATION> LIST_DECLARATION { get; set; }
+        public virtual DbSet<LIST_DECLARATION_AFTER> LIST_DECLARATION_AFTER { get; set; }
+        public virtual DbSet<LIST_ELEBACK> LIST_ELEBACK { get; set; }
+        public virtual DbSet<LIST_FILECONFIG> LIST_FILECONFIG { get; set; }
+        public virtual DbSet<LIST_INSPECTION> LIST_INSPECTION { get; set; }
+        public virtual DbSet<LIST_INSPECTION_AFTER> LIST_INSPECTION_AFTER { get; set; }
+        public virtual DbSet<LIST_INVENTORYHISTORY> LIST_INVENTORYHISTORY { get; set; }
+        public virtual DbSet<LIST_ISBACK> LIST_ISBACK { get; set; }
         public virtual DbSet<LIST_LICENSE> LIST_LICENSE { get; set; }
           public virtual DbSet<LIST_ORDER> LIST_ORDER { get; set; }
        // public virtual DbSet<LIST_ORDERATTACHMENT> LIST_ORDERATTACHMENT { get; set; }

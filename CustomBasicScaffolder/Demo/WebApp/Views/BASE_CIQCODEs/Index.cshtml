@@ -301,15 +301,16 @@
                     if (updated.length) {
                         effectRow.updated = updated;
                     }
+                    
                     //console.log(JSON.stringify(effectRow));
-                    $.post("/BASE_CIQCODEs/SaveData", effectRow, function (response) {
+                    $.post("/BASE_CIQCODEs/SaveData", JSON.stringify(effectRow), function (response) {
                         //console.log(response);
                         if (response.Success) {
                             $.messager.alert("提示", "提交成功！");
                             $dg.datagrid('acceptChanges');
 							$dg.datagrid('reload');
                         }
-                    }, "JSON").error(function (response) {
+                    }, "json").error(function (response) {
 						//console.log(response);
                         $.messager.alert("错误", "提交错误了！",'error');
 						//$dg.datagrid('reload');
