@@ -16,6 +16,7 @@ namespace WebApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("WcfDataService1.svc/{*pathInfo}");
+            routes.IgnoreRoute("WcfDataService2.svc/{*pathInfo}");
             //routes.Add(new ServiceRoute("DataSourceService", new DataServiceHostFactory(), typeof(WcfDataService1)));
             //RouteTable.Routes.Add(new ServiceRoute("SVC/My", new WcfServiceFactory(), typeof(WebApp.WCF.BASE_CIQCODE)));
             

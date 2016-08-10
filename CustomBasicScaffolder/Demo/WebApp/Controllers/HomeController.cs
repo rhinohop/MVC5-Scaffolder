@@ -11,8 +11,17 @@ namespace WebApp.Controllers
     {
         public ActionResult Index()
         {
-            //OdpContext db = new OdpContext();
-            //var list=  db.BASE_CIQCODE.ToList();
+            //OdpContext1 db = new OdpContext1();
+            //var list = db.BASE_CIQCODE.First();
+            // list.CIQNAME = "CIQL";
+           
+            //db.SaveChanges();
+            StoreContext db = new StoreContext();
+            var item = db.Products.First();
+            item.ObjectState = Repository.Pattern.Infrastructure.ObjectState.Modified;
+            item.Name = "__________";
+            db.SaveChanges();
+
             return View();
         }
 

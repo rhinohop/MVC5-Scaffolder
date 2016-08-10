@@ -1,0 +1,322 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="WebApp.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="BaseCode">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CodeType" Type="Edm.String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <NavigationProperty Name="CodeItems" Relationship="WebApp.Models.CodeItem_BaseCode" ToRole="CodeItem_BaseCode_Source" FromRole="CodeItem_BaseCode_Target" />
+      </EntityType>
+      <EntityType Name="CodeItem">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        <Property Name="BaseCodeId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="BaseCode" Relationship="WebApp.Models.CodeItem_BaseCode" ToRole="CodeItem_BaseCode_Target" FromRole="CodeItem_BaseCode_Source" />
+      </EntityType>
+      <EntityType Name="Category">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        <NavigationProperty Name="Products" Relationship="WebApp.Models.Product_Category" ToRole="Product_Category_Source" FromRole="Product_Category_Target" />
+      </EntityType>
+      <EntityType Name="Product">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="Unit" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+        <Property Name="StockQty" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ConfirmDateTime" Type="Edm.DateTime" />
+        <Property Name="CategoryId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Category" Relationship="WebApp.Models.Product_Category" ToRole="Product_Category_Target" FromRole="Product_Category_Source" />
+      </EntityType>
+      <EntityType Name="Company">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="Address" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="City" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="Province" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="RegisterDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Employees" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Departments" Relationship="WebApp.Models.Department_Company" ToRole="Department_Company_Source" FromRole="Department_Company_Target" />
+        <NavigationProperty Name="Employee" Relationship="WebApp.Models.Employee_Company" ToRole="Employee_Company_Source" FromRole="Employee_Company_Target" />
+      </EntityType>
+      <EntityType Name="Department">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="Manager" Type="Edm.String" MaxLength="20" FixedLength="false" Unicode="true" />
+        <Property Name="CompanyId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Company" Relationship="WebApp.Models.Department_Company" ToRole="Department_Company_Target" FromRole="Department_Company_Source" />
+      </EntityType>
+      <EntityType Name="Employee">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="Sex" Type="Edm.String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        <Property Name="Age" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Brithday" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CompanyId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Company" Relationship="WebApp.Models.Employee_Company" ToRole="Employee_Company_Target" FromRole="Employee_Company_Source" />
+      </EntityType>
+      <EntityType Name="DataTableImportMapping">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="EntitySetName" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="FieldName" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="DefaultValue" Type="Edm.String" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="TypeName" Type="Edm.String" MaxLength="30" FixedLength="false" Unicode="true" />
+        <Property Name="IsRequired" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SourceFieldName" Type="Edm.String" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RegularExpression" Type="Edm.String" MaxLength="100" FixedLength="false" Unicode="true" />
+      </EntityType>
+      <EntityType Name="MenuItem">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="Description" Type="Edm.String" MaxLength="100" FixedLength="false" Unicode="true" />
+        <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        <Property Name="Controller" Type="Edm.String" MaxLength="100" FixedLength="false" Unicode="true" />
+        <Property Name="Action" Type="Edm.String" MaxLength="100" FixedLength="false" Unicode="true" />
+        <Property Name="IconCls" Type="Edm.String" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ParentId" Type="Edm.Int32" />
+        <NavigationProperty Name="Parent" Relationship="WebApp.Models.MenuItem_Parent" ToRole="MenuItem_Parent_Target" FromRole="MenuItem_Parent_Source" />
+        <NavigationProperty Name="SubMenus" Relationship="WebApp.Models.MenuItem_Parent" ToRole="MenuItem_Parent_Source" FromRole="MenuItem_Parent_Target" />
+      </EntityType>
+      <EntityType Name="OrderDetail">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ProductId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Qty" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+        <Property Name="Amount" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+        <Property Name="OrderId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Order" Relationship="WebApp.Models.Order_OrderDetails" ToRole="Order_OrderDetails_Source" FromRole="Order_OrderDetails_Target" />
+        <NavigationProperty Name="Product" Relationship="WebApp.Models.OrderDetail_Product" ToRole="OrderDetail_Product_Target" FromRole="OrderDetail_Product_Source" />
+      </EntityType>
+      <EntityType Name="Order">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        <Property Name="ShippingAddress" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="OrderDate" Type="Edm.DateTime" Nullable="false" />
+        <NavigationProperty Name="OrderDetails" Relationship="WebApp.Models.Order_OrderDetails" ToRole="Order_OrderDetails_Target" FromRole="Order_OrderDetails_Source" />
+      </EntityType>
+      <EntityType Name="RoleMenu">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="RoleName" Type="Edm.String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        <Property Name="MenuId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Create" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Edit" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Delete" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Import" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Export" Type="Edm.Boolean" Nullable="false" />
+        <NavigationProperty Name="MenuItem" Relationship="WebApp.Models.RoleMenu_MenuItem" ToRole="RoleMenu_MenuItem_Target" FromRole="RoleMenu_MenuItem_Source" />
+      </EntityType>
+      <EntityType Name="Work">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" />
+        <Property Name="Enableed" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Hour" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Priority" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Score" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+      </EntityType>
+      <Association Name="CodeItem_BaseCode">
+        <End Type="WebApp.Models.BaseCode" Role="CodeItem_BaseCode_Target" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Type="WebApp.Models.CodeItem" Role="CodeItem_BaseCode_Source" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="CodeItem_BaseCode_Target">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="CodeItem_BaseCode_Source">
+            <PropertyRef Name="BaseCodeId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="Product_Category">
+        <End Type="WebApp.Models.Category" Role="Product_Category_Target" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Type="WebApp.Models.Product" Role="Product_Category_Source" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Product_Category_Target">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="Product_Category_Source">
+            <PropertyRef Name="CategoryId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="Department_Company">
+        <End Type="WebApp.Models.Company" Role="Department_Company_Target" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Type="WebApp.Models.Department" Role="Department_Company_Source" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Department_Company_Target">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="Department_Company_Source">
+            <PropertyRef Name="CompanyId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="Employee_Company">
+        <End Type="WebApp.Models.Company" Role="Employee_Company_Target" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Type="WebApp.Models.Employee" Role="Employee_Company_Source" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Employee_Company_Target">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="Employee_Company_Source">
+            <PropertyRef Name="CompanyId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="MenuItem_Parent">
+        <End Type="WebApp.Models.MenuItem" Role="MenuItem_Parent_Target" Multiplicity="0..1" />
+        <End Type="WebApp.Models.MenuItem" Role="MenuItem_Parent_Source" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="MenuItem_Parent_Target">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="MenuItem_Parent_Source">
+            <PropertyRef Name="ParentId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="Order_OrderDetails">
+        <End Type="WebApp.Models.Order" Role="Order_OrderDetails_Source" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Type="WebApp.Models.OrderDetail" Role="Order_OrderDetails_Target" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Order_OrderDetails_Source">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="Order_OrderDetails_Target">
+            <PropertyRef Name="OrderId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="OrderDetail_Product">
+        <End Type="WebApp.Models.Product" Role="OrderDetail_Product_Target" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Type="WebApp.Models.OrderDetail" Role="OrderDetail_Product_Source" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="OrderDetail_Product_Target">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="OrderDetail_Product_Source">
+            <PropertyRef Name="ProductId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="RoleMenu_MenuItem">
+        <End Type="WebApp.Models.MenuItem" Role="RoleMenu_MenuItem_Target" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Type="WebApp.Models.RoleMenu" Role="RoleMenu_MenuItem_Source" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="RoleMenu_MenuItem_Target">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="RoleMenu_MenuItem_Source">
+            <PropertyRef Name="MenuId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <EntityContainer Name="StoreContext" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="BaseCodes" EntityType="WebApp.Models.BaseCode" />
+        <EntitySet Name="CodeItems" EntityType="WebApp.Models.CodeItem" />
+        <EntitySet Name="Categories" EntityType="WebApp.Models.Category" />
+        <EntitySet Name="Products" EntityType="WebApp.Models.Product" />
+        <EntitySet Name="Companies" EntityType="WebApp.Models.Company" />
+        <EntitySet Name="Departments" EntityType="WebApp.Models.Department" />
+        <EntitySet Name="Employees" EntityType="WebApp.Models.Employee" />
+        <EntitySet Name="DataTableImportMappings" EntityType="WebApp.Models.DataTableImportMapping" />
+        <EntitySet Name="MenuItems" EntityType="WebApp.Models.MenuItem" />
+        <EntitySet Name="OrderDetails" EntityType="WebApp.Models.OrderDetail" />
+        <EntitySet Name="Orders" EntityType="WebApp.Models.Order" />
+        <EntitySet Name="RoleMenus" EntityType="WebApp.Models.RoleMenu" />
+        <EntitySet Name="Works" EntityType="WebApp.Models.Work" />
+        <AssociationSet Name="CodeItem_BaseCode" Association="WebApp.Models.CodeItem_BaseCode">
+          <End Role="CodeItem_BaseCode_Target" EntitySet="BaseCodes" />
+          <End Role="CodeItem_BaseCode_Source" EntitySet="CodeItems" />
+        </AssociationSet>
+        <AssociationSet Name="Product_Category" Association="WebApp.Models.Product_Category">
+          <End Role="Product_Category_Target" EntitySet="Categories" />
+          <End Role="Product_Category_Source" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="Department_Company" Association="WebApp.Models.Department_Company">
+          <End Role="Department_Company_Target" EntitySet="Companies" />
+          <End Role="Department_Company_Source" EntitySet="Departments" />
+        </AssociationSet>
+        <AssociationSet Name="Employee_Company" Association="WebApp.Models.Employee_Company">
+          <End Role="Employee_Company_Target" EntitySet="Companies" />
+          <End Role="Employee_Company_Source" EntitySet="Employees" />
+        </AssociationSet>
+        <AssociationSet Name="MenuItem_Parent" Association="WebApp.Models.MenuItem_Parent">
+          <End Role="MenuItem_Parent_Source" EntitySet="MenuItems" />
+          <End Role="MenuItem_Parent_Target" EntitySet="MenuItems" />
+        </AssociationSet>
+        <AssociationSet Name="Order_OrderDetails" Association="WebApp.Models.Order_OrderDetails">
+          <End Role="Order_OrderDetails_Target" EntitySet="OrderDetails" />
+          <End Role="Order_OrderDetails_Source" EntitySet="Orders" />
+        </AssociationSet>
+        <AssociationSet Name="OrderDetail_Product" Association="WebApp.Models.OrderDetail_Product">
+          <End Role="OrderDetail_Product_Source" EntitySet="OrderDetails" />
+          <End Role="OrderDetail_Product_Target" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="RoleMenu_MenuItem" Association="WebApp.Models.RoleMenu_MenuItem">
+          <End Role="RoleMenu_MenuItem_Source" EntitySet="RoleMenus" />
+          <End Role="RoleMenu_MenuItem_Target" EntitySet="MenuItems" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

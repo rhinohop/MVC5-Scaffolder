@@ -6,14 +6,14 @@ namespace WebApp.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class iconcls : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class d : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(iconcls));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(d));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604200627418_iconcls"; }
+            get { return "201608040938273_d"; }
         }
         
         string IMigrationMetadata.Source

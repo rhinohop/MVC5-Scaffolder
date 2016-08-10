@@ -280,45 +280,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503230120520_init.cs" />
-    <Compile Include="Migrations\201503230120520_init.Designer.cs">
-      <DependentUpon>201503230120520_init.cs</DependentUpon>
+    <Compile Include="Migrations\201608040938273_d.cs" />
+    <Compile Include="Migrations\201608040938273_d.Designer.cs">
+      <DependentUpon>201608040938273_d.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601300856405_dx.cs" />
-    <Compile Include="Migrations\201601300856405_dx.Designer.cs">
-      <DependentUpon>201601300856405_dx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604110311495_update.cs" />
-    <Compile Include="Migrations\201604110311495_update.Designer.cs">
-      <DependentUpon>201604110311495_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604120119459_update_product.cs" />
-    <Compile Include="Migrations\201604120119459_update_product.Designer.cs">
-      <DependentUpon>201604120119459_update_product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604200627418_iconcls.cs" />
-    <Compile Include="Migrations\201604200627418_iconcls.Designer.cs">
-      <DependentUpon>201604200627418_iconcls.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604200705113_f.cs" />
-    <Compile Include="Migrations\201604200705113_f.Designer.cs">
-      <DependentUpon>201604200705113_f.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604200706238_dd.cs" />
-    <Compile Include="Migrations\201604200706238_dd.Designer.cs">
-      <DependentUpon>201604200706238_dd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604250224368_t.cs" />
-    <Compile Include="Migrations\201604250224368_t.Designer.cs">
-      <DependentUpon>201604250224368_t.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604250729548_d.cs" />
-    <Compile Include="Migrations\201604250729548_d.Designer.cs">
-      <DependentUpon>201604250729548_d.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604260723240_dd1.cs" />
-    <Compile Include="Migrations\201604260723240_dd1.Designer.cs">
-      <DependentUpon>201604260723240_dd1.cs</DependentUpon>
+    <Compile Include="Migrations\201608050027399_dddddd.cs" />
+    <Compile Include="Migrations\201608050027399_dddddd.Designer.cs">
+      <DependentUpon>201608050027399_dddddd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs">
       <SubType>Code</SubType>
@@ -634,6 +602,9 @@
     <Compile Include="UnitySample\UnityInstanceProvider.cs" />
     <Compile Include="WcfDataService1.svc.cs">
       <DependentUpon>WcfDataService1.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WcfDataService2.svc.cs">
+      <DependentUpon>WcfDataService2.svc</DependentUpon>
     </Compile>
     <Compile Include="WcfServiceFactory.cs" />
     <Compile Include="WCF\BASE_CIQCODE.svc.cs">
@@ -2238,6 +2209,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="WcfDataService1.svc" />
+    <Content Include="WcfDataService2.svc" />
     <Content Include="WCF\BASE_CIQCODE.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2441,35 +2413,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503230120520_init.resx">
-      <DependentUpon>201503230120520_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608040938273_d.resx">
+      <DependentUpon>201608040938273_d.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601300856405_dx.resx">
-      <DependentUpon>201601300856405_dx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604110311495_update.resx">
-      <DependentUpon>201604110311495_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604120119459_update_product.resx">
-      <DependentUpon>201604120119459_update_product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604200627418_iconcls.resx">
-      <DependentUpon>201604200627418_iconcls.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604200705113_f.resx">
-      <DependentUpon>201604200705113_f.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604200706238_dd.resx">
-      <DependentUpon>201604200706238_dd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604250224368_t.resx">
-      <DependentUpon>201604250224368_t.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604250729548_d.resx">
-      <DependentUpon>201604250729548_d.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604260723240_dd1.resx">
-      <DependentUpon>201604260723240_dd1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608050027399_dddddd.resx">
+      <DependentUpon>201608050027399_dddddd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

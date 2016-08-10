@@ -16,7 +16,7 @@ using System.Web;
 namespace WebApp
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
-    public class WcfDataService1 : EntityFrameworkDataService<WebApp.Models.OdpContext>
+    public class WcfDataService1 : EntityFrameworkDataService<WebApp.Models.OdpContext1>
     {
         // This method is called only once to initialize service-wide policies.
         public static void InitializeService(DataServiceConfiguration config)
@@ -24,7 +24,7 @@ namespace WebApp
             // TODO: set rules to indicate which entity sets and service operations are visible, updatable, etc.
             // Examples:
             config.UseVerboseErrors = true;
-            config.SetEntitySetAccessRule("*", EntitySetRights.AllRead);
+            config.SetEntitySetAccessRule("*", EntitySetRights.All);
             config.SetServiceOperationAccessRule("*", ServiceOperationRights.All);
             config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V3;
         }

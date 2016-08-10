@@ -10,6 +10,7 @@ namespace WebApp.Models
     [Table("CUSDOC.BASE_CIQCODE")]
     public partial class BASE_CIQCODE:Entity
     {
+        [Key]
         public decimal ID { get; set; }
 
         [StringLength(50)]

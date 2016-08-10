@@ -551,7 +551,7 @@ foreach (PropertyMetadata property in properties) {
                         effectRow.updated = updated;
                     }
                     //console.log(JSON.stringify(effectRow));
-                    $.post("/<#= ControllerRootName #>/SaveData", effectRow, function (response) {
+                    $.post("/<#= ControllerRootName #>/SaveData", JSON.stringify(effectRow), function (response) {
                         //console.log(response);
                         if (response.Success) {
                             $.messager.alert("提示", "提交成功！");
